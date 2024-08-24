@@ -7,8 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body class="container">
-    <h1>Exercicio 02</h1>
-    <form action="exer1resp.php" method="POST">
+    <h1>Exercício 02 - Subtraia 02 Números</h1>
+    <form action="exer2resp.php" method="POST">
     <div class="row">
             <div class="col">
                 <label for="valor1" class="form-label">Informe o valor 1: </label>
@@ -21,8 +21,7 @@
         </div>
         <div class="row">
             <div class="col mt-3">
-                <button type="submit" class="btn btn-primary">
-                    Enviar </button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </div>
     </form>

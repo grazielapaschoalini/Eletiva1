@@ -16,7 +16,7 @@
                 $valor2 = (int) $_POST['valor2'] ?? 0; // valor2 é o nome do input
                 // + - * / ++ -- **potenciação
                 $resultado = $valor1 * $valor2;
-                echo "<p>Soma: $resultado </p>";
+                echo "<p>Resultado da Multplicação: $resultado </p>";
             } catch(Exception $e){
                 echo "Erro! ".$e->getMessage();
             }
