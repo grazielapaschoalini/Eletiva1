@@ -10,11 +10,9 @@
     <h1>Exercício 04 - Divida 02 Números</h1>
     <?php
         if($_SERVER["REQUEST_METHOD"]== 'POST'){
-            //$valor1 = $_POST['valor1'];
             try{
-                $valor1 = (int) $_POST['valor1'] ?? 0; // valor1 é o nome do input colacencianula
-                $valor2 = (int) $_POST['valor2'] ?? 0; // valor2 é o nome do input
-                // + - * / ++ -- **potenciação
+                $valor1 = (int) $_POST['valor1'] ?? 0;
+                $valor2 = (int) $_POST['valor2'] ?? 0;
                 $resultado = $valor1 / $valor2;
                 echo "<p>Resultado da Divisão: $resultado </p>";
             } catch(DivisionByZeroError $e){

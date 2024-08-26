@@ -10,7 +10,6 @@
     <h1>Exercicio 05 - Cancular Média</h1>
     <?php
         if($_SERVER["REQUEST_METHOD"] == 'POST'){
-            //$valor1 = $_POST['valor1'];
             try{
                 $valor1 = (int) $_POST['valor1'] ?? 0; 
                 $valor2 = (int) $_POST['valor2'] ?? 0; 

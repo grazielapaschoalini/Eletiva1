@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resposta do Exercício 03</title>
+    <title>Resposta do Exercício 08</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Exercício 03 - Multiplique 02 Números</h1>
+    <h1>Exercício 08 - Área do Retângulo</h1>
     <?php
         if($_SERVER["REQUEST_METHOD"]== 'POST'){
             try{
-                $valor1 = (int) $_POST['valor1'] ?? 0; 
+                $valor1 = (int) $_POST['valor1'] ?? 0;
                 $valor2 = (int) $_POST['valor2'] ?? 0; 
                 $resultado = $valor1 * $valor2;
-                echo "<p>Resultado da Multplicação: $resultado </p>";
+                echo "<p>A área do retângulo é: $resultado m²</p>";
             } catch(Exception $e){
                 echo "Erro! ".$e->getMessage();
             }
