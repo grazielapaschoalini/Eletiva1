@@ -15,24 +15,27 @@
   {
     try 
     {
-      $valor1 = (int)$_POST["valor1"] ?? 0;
-      $valor2 = (int)$_POST["valor2"] ?? 0;
-      if($valor1 == $valor2)
+      $valorA = (int)$_POST["valorA"] ?? 0;
+      $valorB = (int)$_POST["valorB"] ?? 0;
+      if($valorA > $valorB)
       {
-        $resultado = ($valor1 + $valor2) * 3;
+        echo "<p>$valorB , $valorA</p>";
+      }
+      elseif($valorB > $valorA)
+      {
+        echo "<p>$valorA , $valorB</p>";
       }
       else
       {
-        $resultado = $valor1 + $valor2;
+        echo "<p>Os valores são iguais: $valorA</p>";
       }
-      echo "<p>O valor é: $resultado</p>";
     } catch (Exception $e) 
     {
       echo "Erro! " . $e->getMessage();
     }
   }
   ?>
-  <a href="exer2.php" class="btn btn-primary">Voltar</a>
+  <a href="exer3.php" class="btn btn-primary">Voltar</a>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

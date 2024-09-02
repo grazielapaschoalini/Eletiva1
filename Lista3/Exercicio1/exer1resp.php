@@ -37,7 +37,8 @@
       echo "<p>O menor valor é: $menorValor</p>";
       echo "<p>A posição do menor valor é a: " . ($posicaoMenor + 1) . "°</p>";
 
-    } catch (Exception $e) {
+    } catch (Exception $e) 
+    {
       echo "Erro! " . $e->getMessage();
     }
   }
