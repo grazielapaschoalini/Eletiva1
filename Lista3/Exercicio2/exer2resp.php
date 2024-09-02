@@ -15,34 +15,23 @@
   {
     try 
     {
-      $numeros = array();
-
-      for ($i = 1; $i <= 7; $i++) 
+      $valor1 = (int)$_POST["valor1"] ?? 0;
+      $valor2 = (int)$_POST["valor2"] ?? 0;
+      if($valor1 == $valor2)
       {
-        $valor = (int)$_POST["valor$i"] ?? 0; // Acessar diretamente o valor do POST
-        $numeros[] = $valor;
+        $resultado = ($valor1 + $valor2) * 3;
       }
-
-      $menorValor = $numeros[0];
-      $posicaoMenor = 0;
-
-      for ($i = 1; $i < count($numeros); $i++)
+      else
       {
-        if($numeros[$i] < $menorValor)
-        {
-          $menorValor = $numeros[$i];
-          $posicaoMenor = $i;
-        }
+        $resultado = $valor1 + $valor2;
       }
-      echo "<p>O menor valor é: $menorValor</p>";
-      echo "<p>A posição do menor valor é a: " . ($posicaoMenor + 1) . "°</p>";
-
+      echo "<p>O valor é: $resultado</p>";
     } catch (Exception $e) {
       echo "Erro! " . $e->getMessage();
     }
   }
   ?>
-  <a href="exer1.php" class="btn btn-primary">Voltar</a>
+  <a href="exer2.php" class="btn btn-primary">Voltar</a>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
