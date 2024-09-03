@@ -14,11 +14,11 @@
     <div class="row">
       <div class="col">
         <label for="valor1" class="form-label">Informe o peso (KG): </label>
-        <input type="number" class="form-control" name="valor1" id="valor1">
+        <input type="step" class="form-control" name="valor1" id="valor1">
       </div>
       <div class="col">
         <label for="valor2" class="form-label">Informe a altura (cm): </label>
-        <input type="number" class="form-control" name="valor2" id="valor2">
+        <input type="step" class="form-control" name="valor2" id="valor2">
       </div>
     </div>
     <div class="row">
