@@ -13,7 +13,7 @@
       <form action="" method="POST">
         <div class="row">
           <div class="col mb-3">
-            <?php for($i = 0; $i < 2; $i++) : ?>
+            <?php for($i = 0; $i < 5; $i++) : ?>
               <label for="nome" class="form-label">Nome Aluno:</label>
               <input type="text" name="nome[]" placeholder="Digite nome" required>
               <label for="nota" class="form-label">Notas: </label>
