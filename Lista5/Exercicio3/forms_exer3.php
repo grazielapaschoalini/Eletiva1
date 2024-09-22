@@ -9,7 +9,7 @@
   <body>
     <div class="container">
       <h1>Lista 05</h1>
-      <h5>Exercício 03- Cadastro e Aplicação de Desconto</h5>
+      <h5>Exercício 03 - Cadastro e Aplicação de Desconto</h5>
       <form action="" method="POST">
         <div class="row">
           <div class="col mb-3">
@@ -68,7 +68,7 @@
               return strcmp($a['nome'], $b['nome']);
             });
 
-            echo "<h5>Lista de Produtos:</h5>";
+            echo "<br><h5>Lista de Produtos:</h5>";
             foreach ($produtos as $produto) 
             {
               echo "<p><strong>Código:</strong> " . $produto['codigo'] . "<br>";

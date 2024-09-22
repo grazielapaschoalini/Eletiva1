@@ -63,7 +63,7 @@
 
               ksort($contatos); // ksort para ordenar os contatos por nome
 
-              echo "<h5>Lista de Contatos:</h5>";
+              echo "<br><h5>Lista de Contatos:</h5>";
               foreach ($contatos as $nome => $telefone) 
               {
                 echo "<p><strong>Nome:</strong> $nome <br> <strong>Telefone:</strong> $telefone</p>";

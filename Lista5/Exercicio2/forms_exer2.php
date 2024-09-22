@@ -56,7 +56,7 @@
 
             arsort($mediaAluno);
 
-            echo "<h5>Lista de Alunos e Médias:</h5>";
+            echo "<br><h5>Lista de Alunos e Médias:</h5>";
             foreach ($mediaAluno as $nome => $media) 
             {
               echo "<p><strong>Nome:</strong> $nome <br> <strong>Média:</strong> " . number_format($media, 2, ',', '.') . "</p>";
