@@ -16,6 +16,7 @@
             <?php for($i = 0; $i < 5; $i++) : ?>
               <label for="nome" class="form-label">Nome Aluno:</label>
               <input type="text" name="nome[]" placeholder="Digite nome" required>
+
               <label for="nota" class="form-label">Notas: </label>
               <input type="number" name="nota1[]" placeholder="Nota P1" step="0.1" required>
               <input type="number" name="nota2[]" placeholder="Nota P2" step="0.1" required>
@@ -32,8 +33,10 @@
       </form>
 
       <?php
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-          try {
+        if ($_SERVER['REQUEST_METHOD'] == "POST") 
+        {
+          try 
+          {
             $nomes = $_POST['nome'];
             $notas1 = $_POST['nota1'];
             $notas2 = $_POST['nota2'];
@@ -41,7 +44,8 @@
 
             $mediaAluno = [];
 
-            foreach ($nomes as $chave => $nome) {
+            foreach ($nomes as $chave => $nome) 
+            {
               $nota1 = floatval($notas1[$chave]);
               $nota2 = floatval($notas2[$chave]);
               $nota3 = floatval($notas3[$chave]);
@@ -53,11 +57,14 @@
             arsort($mediaAluno);
 
             echo "<h5>Lista de Alunos e Médias:</h5>";
-            foreach ($mediaAluno as $nome => $media) {
-              echo "<p><strong>Nome:</strong> $nome <br> <strong>Média:</strong> " . number_format($media, 2) . "</p>";
+            foreach ($mediaAluno as $nome => $media) 
+            {
+              echo "<p><strong>Nome:</strong> $nome <br> <strong>Média:</strong> " . number_format($media, 2, ',', '.') . "</p>";
             }
-
-          } catch (Exception $e) {
+          } 
+          
+          catch (Exception $e) 
+          {
             echo "<p style='color: red;'>Erro: " . $e->getMessage() . "</p>";
           }
         }
