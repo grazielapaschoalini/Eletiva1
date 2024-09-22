@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Entrada de valore</title>
+    <title>Entrada de Valores</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
     <div class="container">
       <h1>Lista 05</h1>
-      <h5>Exercício 04 - Cadastro de Itens e Aplicação de Imposto</h5>
+      <h5>Exercício 05 - Verificação de Estoque</h5>
       <form action="" method="POST">
         <div class="row">
           <div class="col mb-3">
-            <?php for($i = 0; $i < 5; $i++) : ?>
-              <label for="nome" class="form-label">Nome do Produto:</label>
-              <input type="text" name="nome[]" placeholder="Digite o nome" required>
+            <?php for($i = 0; $i < 3; $i++) : ?>
+              <label for="titulo" class="form-label">Título do Livro:</label>
+              <input type="text" name="titulo[]" placeholder="Digite o título" required>
 
-              <label for="preco" class="form-label">Preço:</label>
-              <input type="number" step="0.01" name="preco[]" placeholder="Digite o preço" required>
+              <label for="estoque" class="form-label">Quantidade em Estoque:</label>
+              <input type="number" name="estoque[]" placeholder="Quantidade" required>
               <br>
             <?php endfor; ?>
           </div>
@@ -31,30 +31,34 @@
       </form>
 
       <?php
-      if ($_SERVER['REQUEST_METHOD'] == "POST")
+      if ($_SERVER['REQUEST_METHOD'] == "POST") 
       {
         try 
         {
-          $nomes = $_POST['nome'];
-          $precos = $_POST['preco'];
+          $titulos = $_POST['titulo'];
+          $estoques = $_POST['estoque'];
+          $livros = [];
 
-          $itens = [];
-
-          foreach ($nomes as $chave => $nome) 
+          foreach ($titulos as $chave => $titulo) 
           {
-            $preco = floatval($precos[$chave]);
-            $precoComImposto = $preco * 1.15;
-            $itens[$nome] = $precoComImposto;
+            $estoque = intval($estoques[$chave]);
+            $livros[$titulo] = $estoque;
           }
 
-          asort($itens);
+          ksort($livros);
 
-          echo "<br><h5>Lista de Itens:</h5>";
-          foreach ($itens as $nome => $preco) 
+          echo "<br><h5>Lista de Livros:</h5>";
+          foreach ($livros as $titulo => $estoque) 
           {
-            echo "<p><strong>Nome:</strong> $nome <br> <strong>Preço com Imposto (15%):</strong> R$ " . number_format($preco, 2, ',', '.') . "</p>";
+            echo "<p><strong>Título:</strong> $titulo <br> <strong>Estoque:</strong> $estoque</p>";
+
+            if ($estoque < 5) 
+            {
+              echo "<p style='color: red;'>Alerta: O livro '$titulo' está com estoque baixo!</p>";
+            }
           }
         } 
+
         catch (Exception $e) 
         {
           echo "<p style='color: red;'>Erro: " . $e->getMessage() . "</p>";
@@ -65,3 +69,4 @@
     </div>
   </body>
 </html>
+

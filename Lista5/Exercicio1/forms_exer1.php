@@ -14,8 +14,11 @@
         <div class="row">
           <div class="col mb-3">
             <?php for($i = 0; $i < 5; $i++) : ?>
-              <input type="text" name="nome[]" placeholder="Nome <?= $i + 1 ?>">
-              <input type="tel" name="telefone[]" placeholder="Telefone  <?= $i + 1 ?>">
+              <label for="nome" class="form-label">Nome Completo:</label>
+              <input type="text" name="nome[]" placeholder="Digite o nome" required>
+
+              <label for="telefone" class="form-label">Telefone:</label>
+              <input type="tel" name="telefone[]" placeholder="(xx) xxxxx-xxxx" required>
               <br>
             <?php endfor; ?> 
           </div>
@@ -38,7 +41,6 @@
               $contatos = [];
               $duplicados = false;
 
-              // para ver as duplocatas dos nomes e dos telefone
               foreach ($nomes as $chave => $nome) 
               {
                 $telefone = $telefones[$chave];
@@ -68,7 +70,10 @@
               {
                 echo "<p><strong>Nome:</strong> $nome <br> <strong>Telefone:</strong> $telefone</p>";
               }
-            } catch(Exception $e) {
+            } 
+            
+            catch(Exception $e) 
+            {
                 echo "<p style='color: red;'>Erro: " . $e->getMessage() . "</p>";
             }
         }
