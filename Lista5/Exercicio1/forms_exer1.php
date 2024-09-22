@@ -30,42 +30,44 @@
       <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") 
         {
-            try {
-                $nomes = $_POST['nome'];
-                $telefones = $_POST['telefone'];
+            try 
+            {
+              $nomes = $_POST['nome'];
+              $telefones = $_POST['telefone'];
 
-                $contatos = [];
-                $duplicados = false;
+              $contatos = [];
+              $duplicados = false;
 
-                // para ver as duplocatas dos nomes e dos telefone
-                foreach ($nomes as $chave => $nome) 
+              // para ver as duplocatas dos nomes e dos telefone
+              foreach ($nomes as $chave => $nome) 
+              {
+                $telefone = $telefones[$chave];
+
+                if (in_array($nome, array_keys($contatos))) 
                 {
-                    $telefone = $telefones[$chave];
-
-                    if (in_array($nome, array_keys($contatos))) 
-                    {
-                        echo "<p style='color: red;'>Erro: O nome '$nome' já foi cadastrado!</p>";
-                        $duplicados = true;
-                    }
-                    if (in_array($telefone, $contatos)) 
-                    {
-                        echo "<p style='color: red;'>Erro: O telefone '$telefone' já foi cadastrado!</p>";
-                        $duplicados = true;
-                    }
-
-                    if (!$duplicados) 
-                    {
-                        $contatos[$nome] = $telefone;
-                    }
-                    $duplicados = false; 
+                  echo "<p style='color: red;'>Erro: O nome '$nome' já foi cadastrado!</p>";
+                  $duplicados = true;
+                }
+                if (in_array($telefone, $contatos)) 
+                {
+                  echo "<p style='color: red;'>Erro: O telefone '$telefone' já foi cadastrado!</p>";
+                  $duplicados = true;
                 }
 
-                ksort($contatos); // ksort para ordenar os contatos por nome
-
-                echo "<h5>Lista de Contatos:</h5>";
-                foreach ($contatos as $nome => $telefone) {
-                    echo "<p><strong>Nome:</strong> $nome <br> <strong>Telefone:</strong> $telefone</p>";
+                if (!$duplicados) 
+                {
+                  $contatos[$nome] = $telefone;
                 }
+                  $duplicados = false; 
+              }
+
+              ksort($contatos); // ksort para ordenar os contatos por nome
+
+              echo "<h5>Lista de Contatos:</h5>";
+              foreach ($contatos as $nome => $telefone) 
+              {
+                echo "<p><strong>Nome:</strong> $nome <br> <strong>Telefone:</strong> $telefone</p>";
+              }
             } catch(Exception $e) {
                 echo "<p style='color: red;'>Erro: " . $e->getMessage() . "</p>";
             }
