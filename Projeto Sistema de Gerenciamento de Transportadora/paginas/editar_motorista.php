@@ -18,12 +18,6 @@
             <label for="tipo" class="form-label">Tipo</label>
             <input type="text" class="form-control" id="tipo" name="tipo" value="<?php echo $motorista['tipo']; ?>" required>
         </div>
-        <div class="mb-3">
-            <label for="motorista_id" class="form-label">Motorista</label>
-            <select name="motorista_id" id="motorista_id" class="form-control" required>
-                    <option value="1">Motorista 1</option>
-            </select>
-        </div>
         <button type="submit" class="btn btn-primary">Atualizar</button>
     </form>
 </div>
