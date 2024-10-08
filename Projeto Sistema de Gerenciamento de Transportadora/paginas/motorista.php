@@ -4,7 +4,7 @@
 ?>
 
 <div class="container mt-5">
-    <h2>Motoristas</h2>
+    <h2>Gerenciamento de Motoristas</h2>
     <a href="novo_motorista.php" class="btn btn-primary">Novo Motorista</a>
     <table class="table table-striped mt-4">
         <thead>
@@ -13,6 +13,7 @@
                 <th>Nome</th>
                 <th>CNH</th>
                 <th>Tipo</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>

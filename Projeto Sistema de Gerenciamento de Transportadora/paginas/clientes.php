@@ -4,7 +4,7 @@
 ?>
 
 <div class="container mt-5">
-    <h2>Clientes</h2>
+    <h2>Gerenciamento de Clientes</h2>
     <a href="novo_cliente.php" class="btn btn-primary">Novo Cliente</a>
     <table class="table table-striped mt-4">
         <thead>
@@ -23,6 +23,7 @@
                 <td>usuario@gmail.com</td>
                 <td>Administrador</td>
                 <td>
+                    <a href="editar_cliente.php" class="btn btn-warning">Editar</a>
                     <a href="excluir_cliente.php" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
