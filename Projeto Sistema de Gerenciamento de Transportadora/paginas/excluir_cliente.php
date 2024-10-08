@@ -11,7 +11,7 @@
     <ul>
         <li><strong>Nome:</strong> </li>
         <li><strong>Email:</strong> </li>
-        <li><strong>Ações:</strong> </li>
+        <li><strong>Nível:</strong> </li>
     </ul>
 
     <form method="post">

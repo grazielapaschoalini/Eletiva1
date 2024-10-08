@@ -12,6 +12,7 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
+                <th>Nível</th>
                 <th>Ações</th>
             </tr>
         </thead>
