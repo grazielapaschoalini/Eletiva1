@@ -7,7 +7,6 @@
     <h2>Excluir Motorista</h2>
     <p>Tem certeza de que deseja excluir o Motorista abaixo?</p>
     <ul>
-        <li><strong>ID:</strong> </li>
         <li><strong>Nome:</strong> </li>
         <li><strong>CNH:</strong> </li>
         <li><strong>Tipo:</strong> </li>
