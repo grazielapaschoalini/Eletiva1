@@ -10,15 +10,17 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Data</th>
                 <th>Descrição</th>
-                <th>Peso</th>
+                <th>Peso(kg)</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Grãos</td>
+                <td>10/10/2024</td>
+                <td>Soja em grãos</td>
                 <td>8000</td>
                 <td>
                     <a href="editar_carga.php" class="btn btn-warning">Editar</a>
