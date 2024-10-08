@@ -12,7 +12,7 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>CNH</th>
-                <th>Ações</th>
+                <th>Tipo</th>
             </tr>
         </thead>
         <tbody>

@@ -15,8 +15,8 @@
             <input type="text" class="form-control" id="cnh" name="cnh" required>
         </div>
         <div class="mb-3">
-            <label for="acoes" class="form-label">Ações</label>
-            <input type="text" class="form-control" id="acoes" name="acoes" required>
+            <label for="tipo" class="form-label">Tipo</label>
+            <input type="text" class="form-control" id="tipo" name="tipo" required>
         </div>
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
