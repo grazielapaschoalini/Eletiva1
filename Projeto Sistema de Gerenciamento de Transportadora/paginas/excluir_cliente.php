@@ -11,12 +11,12 @@
     <ul>
         <li><strong>Nome:</strong> </li>
         <li><strong>Email:</strong> </li>
-        <li><strong>Nível:</strong> </li>
+        <li><strong>Ações:</strong> </li>
     </ul>
 
     <form method="post">
         <button type="submit" name="confirmar" class="btn btn-danger">Excluir</button>
-        <a href="usuarios.php" class="btn btn-secondary">Cancelar</a>
+        <a href="clientes.php" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 

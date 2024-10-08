@@ -12,7 +12,6 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
-                <th>Nível</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -23,10 +22,11 @@
                 <td>usuario@gmail.com</td>
                 <td>Administrador</td>
                 <td>
-                    <a href="excluir_usuario.php" class="btn btn-danger">Excluir</a>
+                    <a href="excluir_cliente.php" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
         </tbody>
     </table>
+</div>
     
 <?php require_once 'rodape.php'; ?>
