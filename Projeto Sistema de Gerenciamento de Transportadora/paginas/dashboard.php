@@ -20,9 +20,9 @@
             var data = google.visualization.arrayToDataTable([
                 ['Motorista', 'Número de Entregas'],
                 ['João Castro', 8],
-                ['Maria Oliveira', 15],
+                ['Paulo Oliveira', 15],
                 ['Pedro Sampaio', 12],
-                ['Ana Luiza Santos', 20]
+                ['Carlos dos Santos', 20]
             ]);
 
             var options = {
