@@ -1,12 +1,18 @@
 <?php 
+
+    require_once('../funcoes/usuarios.php');
+
+
     session_start(); //serve para que o servidor armazene o que eu quero digitar
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         try{
             $email = $_POST['email'] ?? "";
             $senha = $_POST['senha'] ?? "";
             if($email != "" && $senha != ""){
-                if ($email == "adm@adm.com" && $senha == '123'){
-                    $_SESSION['usuario'] = 'Administrador'; // so consegue trabalhar com essas duas variaveis pq fez o session_start()
+                $usuario = login($email, $senha);
+                if ($usuario){
+                    $_SESSION['usuario'] = $usuario['nome'];
+                    $_SESSION['nivel'] = $usuario['nivel'];
                     $_SESSION['acesso'] = true;
                     header("Location: dashboard.php");
                 } else{
