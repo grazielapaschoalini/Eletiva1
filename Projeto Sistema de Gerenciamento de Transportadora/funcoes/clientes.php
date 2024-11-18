@@ -24,12 +24,6 @@ function retornaClientePorId(int $id): ?array {
     return $cliente ?: null;
 }
 
-function atualizarCliente(int $id, string $nome, string $cpf, string $email, string $telefone): bool {
-    global $pdo;
-    $stament = $pdo->prepare("UPDATE cliente SET nome = ?, cpf = ?, email = ?, telefone = ? WHERE id = ?");
-    return $stament->execute([$nome, $cpf, $email, $telefone, $id]);
-}
-
 function editarCliente(int $id, string $nome, string $cpf, string $email, string $telefone): bool {
     global $pdo;
     $stament = $pdo->prepare("UPDATE cliente SET nome = ?, cpf = ?, email = ?, telefone = ? WHERE id = ?");
