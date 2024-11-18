@@ -1,25 +1,24 @@
 <?php 
-require_once 'cabecalho.php'; 
-require_once 'navbar.php'; 
-require_once '../funcoes/usuarios.php';
+    require_once 'cabecalho.php'; 
+    require_once 'navbar.php'; 
+    require_once '../funcoes/usuarios.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    $nivel = $_POST['nivel'];
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $nivel = $_POST['nivel'];
 
-    if (novoUsuario($nome, $email, $senha, $nivel)) {
-        header("Location: usuarios.php");
-    } else {
-        echo "<p class='text-danger'>Erro ao criar usuário!</p>";
+        if (novoUsuario($nome, $email, $senha, $nivel)) {
+            header("Location: usuarios.php");
+        } else {
+            echo "<p class='text-danger'>Erro ao criar usuário!</p>";
+        }
     }
-}
 ?>
 
 <div class="container mt-5">
     <h2>Criar Novo Usuário</h2>
-
     <form method="post">
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
@@ -37,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="nivel" class="form-label">Nível</label>
             <select name="nivel" id="nivel" class="form-control" required>
                 <option value="adm">Administrador</option>
-                <option value="comum">Comum</option>
+                <option value="colab">Colaborador</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Criar Usuário</button>

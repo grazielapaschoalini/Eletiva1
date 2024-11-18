@@ -1,6 +1,9 @@
 <?php 
-require_once 'cabecalho.php'; 
-require_once 'navbar.php'; 
+    require_once 'cabecalho.php'; 
+    require_once 'navbar.php'; 
+    require_once '../funcoes/usuarios.php';
+
+    $usuarios = todosUsuarios();
 ?>
 
 <div class="container mt-5">
@@ -12,8 +15,8 @@ require_once 'navbar.php';
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
+                <th>Senha</th>
                 <th>Nível</th>
-                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -26,10 +29,11 @@ require_once 'navbar.php';
                 <td><?= $usuario['id']; ?></td>
                 <td><?= $usuario['nome']; ?></td>
                 <td><?= $usuario['email']; ?></td>
+                <td><?= $usuario['senha']; ?></td>
                 <td><?= $usuario['nivel']; ?></td>
                 <td>
                     <a href="editar_usuario.php?id=<?= $usuario['id']; ?>" class="btn btn-warning">Editar</a>
-                    <a href="excluir_usuario.php?id=<?= $usuario['id']; ?>" class="btn btn-danger">Excluir</a>
+                    <a href="excluir_usuario.php?id=<?= $usuario['id']; ?>" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
                 </td>
             </tr>
             <?php endforeach; ?>

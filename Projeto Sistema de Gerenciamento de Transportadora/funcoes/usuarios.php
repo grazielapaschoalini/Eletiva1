@@ -26,10 +26,16 @@ function login(string $email, string $senha) {
 }
 
 function novoUsuario(string $nome, string $email, string $senha, string $nivel): bool {
-    global $pdo;
-    $senha_criptografada = password_hash($senha, PASSWORD_BCRYPT);
-    $stament = $pdo->prepare("INSERT INTO usuario (nome, email, senha, nivel) VALUES (?, ?, ?, ?)");
-    return $stament->execute([$nome, $email, $senha_criptografada, $nivel]);
+    try{
+        global $pdo;
+        $senha_criptografada = password_hash($senha, PASSWORD_BCRYPT);
+        $stament = $pdo->prepare("INSERT INTO usuario (nome, email, senha, nivel) VALUES (?, ?, ?, ?)");
+        
+        return $stament->execute([$nome, $email, $senha_criptografada, $nivel]);
+    } catch (Exception $e){
+        $erro = "Erro: ".$e->getMessage();
+        echo "$erro";
+    }
 }
 
 function editarUsuario(int $id, string $nome, string $email, string $nivel): bool {

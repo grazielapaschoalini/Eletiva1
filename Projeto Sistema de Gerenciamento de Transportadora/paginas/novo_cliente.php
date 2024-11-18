@@ -1,20 +1,20 @@
 <?php 
-require_once 'cabecalho.php'; 
-require_once 'navbar.php'; 
-require_once '../funcoes/clientes.php'; 
+    require_once 'cabecalho.php'; 
+    require_once 'navbar.php'; 
+    require_once '../funcoes/clientes.php'; 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $cpf = $_POST['cpf'];
-    $email = $_POST['email'];
-    $telefone = $_POST['telefone'];
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $nome = $_POST['nome'];
+        $cpf = $_POST['cpf'];
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
 
-    if (novoCliente($nome, $cpf, $email, $telefone)) {
-        header('Location: clientes.php');
-    } else {
-        echo "<p class='text-danger'>Erro ao salvar cliente.</p>";
+        if (novoCliente($nome, $cpf, $email, $telefone)) {
+            header('Location: clientes.php');
+        } else {
+            echo "<p class='text-danger'>Erro ao salvar cliente.</p>";
+        }
     }
-}
 ?>
 
 <div class="container mt-5">

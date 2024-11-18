@@ -1,9 +1,9 @@
 <?php 
-require_once 'cabecalho.php'; 
-require_once 'navbar.php'; 
-require_once '../funcoes/clientes.php'; 
+    require_once 'cabecalho.php'; 
+    require_once 'navbar.php'; 
+    require_once '../funcoes/clientes.php'; 
 
-$clientes = todosClientes();
+    $clientes = todosClientes();
 ?>
 
 <div class="container mt-5">
@@ -17,7 +17,6 @@ $clientes = todosClientes();
                 <th>CPF</th>
                 <th>Email</th>
                 <th>Telefone</th>
-                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -30,7 +29,7 @@ $clientes = todosClientes();
                 <td><?= $cliente['telefone'] ?></td>
                 <td>
                     <a href="editar_cliente.php?id=<?= $cliente['id'] ?>" class="btn btn-warning">Editar</a>
-                    <a href="excluir_cliente.php?id=<?= $cliente['id'] ?>" class="btn btn-danger">Excluir</a>
+                    <a href="excluir_cliente.php?id=<?= $cliente['id'] ?>" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
                 </td>
             </tr>
             <?php endforeach; ?>

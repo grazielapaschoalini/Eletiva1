@@ -1,9 +1,8 @@
 <?php
-  session_start();
-  if(!isset($_SESSION['acesso'])){
-      header('Location: login.php');
-}
-
+    session_start();
+    if(!isset($_SESSION['acesso'])){
+        header('Location: login.php');
+    }
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,6 +13,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
+
+            <?php
+                if ($_SESSION['nivel'] == 'adm'):
+            ?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Usuários
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="usuarios.php">Gerenciar</a></li>
+                    </ul>
+                </li>
+            <?php
+                endif;
+            ?>  
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clientes</a>
                     <ul class="dropdown-menu">
@@ -23,7 +37,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Motoristas</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="motoristas.php">Gerenciar</a></li>
+                        <li><a class="dropdown-item" href="motorista.php">Gerenciar</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
