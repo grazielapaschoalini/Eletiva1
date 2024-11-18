@@ -35,4 +35,5 @@ function excluirCliente(int $id): bool {
     $stament = $pdo->prepare("DELETE FROM cliente WHERE id = ?");
     return $stament->execute([$id]);
 }
+
 ?>

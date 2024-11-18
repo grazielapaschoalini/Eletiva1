@@ -1,34 +1,39 @@
-<?php 
-    require_once 'cabecalho.php'; 
-    require_once 'navbar.php';    
+<?php
+require_once('../funcoes/motoristas.php');
+
+$motoristas = todosMotoristas();
 ?>
 
-<div class="container mt-5">
-    <h2>Gerenciamento de Motoristas</h2>
-    <a href="novo_motorista.php" class="btn btn-primary">Novo Motorista</a>
-    <table class="table table-striped mt-4">
-        <thead>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motoristas</title>
+</head>
+<body>
+    <h1>Motoristas Cadastrados</h1>
+    <a href="novo_motorista.php">Cadastrar Novo Motorista</a>
+    <table border="1">
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Ações</th>
+        </tr>
+        <?php foreach ($motoristas as $motorista): ?>
             <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>CNH</th>
-                <th>Tipo</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Marcos Luis Cesco</td>
-                <td>475288</td>
-                <td>Cargas Perigosas</td>
+                <td><?= htmlspecialchars($motorista['nome']) ?></td>
+                <td><?= htmlspecialchars($motorista['cpf']) ?></td>
+                <td><?= htmlspecialchars($motorista['email']) ?></td>
+                <td><?= htmlspecialchars($motorista['telefone']) ?></td>
                 <td>
-                    <a href="editar_motorista.php" class="btn btn-warning">Editar</a>
-                    <a href="excluir_motorista.php" class="btn btn-danger">Excluir</a>
+                    <a href="editar_motorista.php?id=<?= $motorista['id'] ?>">Editar</a>
+                    <a href="excluir_motorista.php?id=<?= $motorista['id'] ?>" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
                 </td>
             </tr>
-        </tbody>
+        <?php endforeach; ?>
     </table>
-</div>
-
-<?php require_once 'rodape.php'; ?>
+</body>
+</html>
