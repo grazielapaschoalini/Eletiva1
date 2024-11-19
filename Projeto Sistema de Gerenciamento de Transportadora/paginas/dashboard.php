@@ -1,6 +1,9 @@
 <?php
     require_once 'cabecalho.php'; 
     require_once 'navbar.php';
+    require_once '../funcoes/motoristas.php';
+
+    #$dados = gerarDadosGrafico();
 ?>
 
 <main class="container">
@@ -18,11 +21,10 @@
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ['Motorista', 'Número de Entregas'],
-                ['João Castro', 8],
-                ['Paulo Oliveira', 15],
-                ['Pedro Sampaio', 12],
-                ['Carlos dos Santos', 20]
+                ['Motorista', 'Número de Entregas',{ role: 'style' }],
+                <?php foreach ($dados as $dado): ?>
+                    ['<?= $dado['nome'] ?>', <?= $dado['quantidade'] ?>, 'magenta'],
+                <?php endforeach; ?>
             ]);
 
             var options = {
