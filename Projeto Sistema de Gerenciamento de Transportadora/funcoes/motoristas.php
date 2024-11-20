@@ -4,8 +4,6 @@
 
     function gerarDadosGrafico(): array {
         global $pdo;
-
-        // Consulta para contar as entregas realizadas por motorista no mês atual
         $stmt = $pdo->query("SELECT 
                                 m.nome,
                                 COUNT(e.id) AS total_entregas
