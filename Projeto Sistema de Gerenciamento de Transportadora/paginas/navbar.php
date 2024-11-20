@@ -18,11 +18,9 @@
                 if ($_SESSION['nivel'] == 'adm'):
             ?>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Usuários
-                    </a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usuários</a>
                     <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="usuarios.php">Gerenciar</a></li>
+                    <li><a class="dropdown-item" href="usuarios.php">Gerenciar Usuários</a></li>
                     </ul>
                 </li>
             <?php
@@ -31,25 +29,25 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clientes</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="clientes.php">Gerenciar</a></li>
+                        <li><a class="dropdown-item" href="clientes.php">Gerenciar Clientes</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Motoristas</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="motorista.php">Gerenciar</a></li>
+                        <li><a class="dropdown-item" href="motoristas.php">Gerenciar Motoristas</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cargas</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="cargas.php">Gerenciar</a></li>
+                        <li><a class="dropdown-item" href="cargas.php">Gerenciar Cargas</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Entregas</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="entregas.php">Gerenciar</a></li>
+                        <li><a class="dropdown-item" href="entregas.php">Gerenciar Entregas</a></li>
                     </ul>
                 </li>
             </ul>
