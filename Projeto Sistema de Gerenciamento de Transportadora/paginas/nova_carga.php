@@ -1,20 +1,20 @@
 <?php
-require_once 'cabecalho.php'; 
-require_once 'navbar.php'; 
-require_once '../funcoes/cargas.php';
+    require_once 'cabecalho.php'; 
+    require_once 'navbar.php'; 
+    require_once '../funcoes/cargas.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $descricao = $_POST['descricao'];
-    $peso = floatval($_POST['peso']);
-    $valor = floatval($_POST['valor']);
-    $destino = $_POST['destino'];
-    
-    if (novaCarga($descricao, $peso, $valor, $destino)) {
-        header('Location: cargas.php');
-    } else {
-        echo "<p class='text-danger'Erro ao cadastrar carga.</p>";
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $descricao = $_POST['descricao'];
+        $peso = floatval($_POST['peso']);
+        $valor = floatval($_POST['valor']);
+        $destino = $_POST['destino'];
+        
+        if (novaCarga($descricao, $peso, $valor, $destino)) {
+            header('Location: cargas.php');
+        } else {
+            echo "<p class='text-danger'Erro ao cadastrar carga.</p>";
+        }
     }
-}
 ?>
 
 <div class="container mt-5">
