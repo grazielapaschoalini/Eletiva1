@@ -9,7 +9,7 @@
 <div class="container mt-5">
     <h2>Gerenciamento de Cargas</h2>
     <a href="nova_carga.php" class="btn btn-success mb-3">Nova Carga</a>
-    <table class="table table-hover table-striped">
+    <table class="table table-striped table-hover ">
         <thead>
             <tr>
                 <th>ID</th>    

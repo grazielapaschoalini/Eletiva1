@@ -1,34 +1,32 @@
-CREATE TABLE usuarios (
+CREATE TABLE usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL, 
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    nivel ENUM('adm', 'colab') NOT NULL
 );
 
-CREATE TABLE clientes (
+CREATE TABLE cliente (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    endereco VARCHAR(255) NOT NULL,
-    telefone VARCHAR(20),
+    cpf VARCHAR(11) NOT NULL,
     email VARCHAR(100),
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    telefone VARCHAR(20)
 );
 
-CREATE TABLE motoristas (
+CREATE TABLE motorista (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    cnh VARCHAR(20) NOT NULL,
-    telefone VARCHAR(20),
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    cnh VARCHAR(9) NOT NULL,
+    telefone VARCHAR(20)
 );
 
-CREATE TABLE cargas (
+CREATE TABLE carga (
     id INT AUTO_INCREMENT PRIMARY KEY,
     descricao VARCHAR(255) NOT NULL,
     peso DECIMAL(10, 2) NOT NULL,
     valor DECIMAL(10, 2) NOT NULL,
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    destino VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE entregas (
@@ -37,8 +35,8 @@ CREATE TABLE entregas (
     motorista_id INT NOT NULL,
     carga_id INT NOT NULL,
     data_entrega DATE NOT NULL,
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-    FOREIGN KEY (motorista_id) REFERENCES motoristas(id),
-    FOREIGN KEY (carga_id) REFERENCES cargas(id)
+    
+    FOREIGN KEY (cliente_id) REFERENCES cliente(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (motorista_id) REFERENCES motorista(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (carga_id) REFERENCES carga(id) ON DELETE CASCADE ON UPDATE CASCADE
 );

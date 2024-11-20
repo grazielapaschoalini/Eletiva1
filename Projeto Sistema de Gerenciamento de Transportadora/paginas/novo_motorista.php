@@ -31,7 +31,13 @@
             <label for="telefone">Telefone:</label>
             <input type="text" id="telefone" name="telefone" class="form-control" required>
         </div>
-        <button type="submit" class="btn btn-primary">Salvar Motorista</button>
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Salvar Motorista</button>
+            <div>
+                <a href="dashboard.php" class="btn btn-secondary">Cancelar</a>
+                <button type="button" class="btn btn-light" onclick="history.back();">Voltar</button>
+            </div>
+        </div>
     </form>
 </div>
 

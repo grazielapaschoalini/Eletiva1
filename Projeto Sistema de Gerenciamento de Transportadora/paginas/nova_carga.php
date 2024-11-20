@@ -36,7 +36,13 @@
             <label for="destino" class="form-label">Destino:</label>
             <input type="text" id="destino" name="destino" class="form-control" required>
         </div>
-        <button type="submit" class="btn btn-primary">Salvar Carga</button>
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Salvar Carga</button>
+            <div>
+                <a href="dashboard.php" class="btn btn-secondary">Cancelar</a>
+                <button type="button" class="btn btn-light" onclick="history.back();">Voltar</button>
+            </div>
+        </div>
     </form>
 </div>
 

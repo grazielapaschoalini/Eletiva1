@@ -4,11 +4,21 @@ declare(strict_types=1);
 
 require_once('../config/bancodedados.php');
 
-#function gerarDadosGrafico(): array {
-#    global $pdo;
-#    $stament = $pdo->query("SELECT m.id, m.nome, SUM(e.quantidade) as entregas FROM entregas e INNER JOIN motorista m ON m.id = e.motorista_id GROUP BY m.id");
-#    return $stament->fetchAll(PDO::FETCH_ASSOC);
-#}
+function gerarDadosGrafico(): array {
+    global $pdo;
+
+    // Consulta para contar as entregas realizadas por motorista no mês atual
+    $stmt = $pdo->query("SELECT 
+                            m.nome,
+                            COUNT(e.id) AS total_entregas
+                        FROM entregas e
+                        INNER JOIN motorista m ON e.motorista_id = m.id
+                        WHERE MONTH(e.data_entrega) = MONTH(CURRENT_DATE())
+                        AND YEAR(e.data_entrega) = YEAR(CURRENT_DATE())
+                        GROUP BY m.id");
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 function novoMotorista(string $nome, string $cnh, string $telefone): bool {
     global $pdo;
